@@ -8,7 +8,12 @@ class Translation(object):
 <b> ഹലോ എന്റെ പേര് JONATHAN JAMES <b> <b>ഞാൻ <b><a href="https://t.me/dmx_chating">ᴅᴍx ᴄʜᴀᴛɪɴɢ</a></b> എന്ന ഗ്രൂപ്പിൽ മൂവീസ് കൊടുക്കുന്ന ബോട്ട് ആണ്
 എന്നെ DMX ഇൽ അല്ലാതെ വേറെ ഒരു ഗ്രൂപ്പിലും ഉപയോഗിക്കാൻ കഴിയുകയില്ല
     
-    HELP_TEXT = """
+ 
+
+
+
+
+  HELP_TEXT = """
 <b><i><u>How To Use Me!?</u></i></b>
 
 <i>
