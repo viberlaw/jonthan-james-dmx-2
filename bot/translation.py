@@ -11,7 +11,7 @@ class Translation(object):
 
 
 
-</i>"""    
+"""    
     
     HELP_TEXT = """
 <b><i><u>How To Use Me!?</u></i></b>
