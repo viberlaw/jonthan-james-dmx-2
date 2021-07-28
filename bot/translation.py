@@ -13,7 +13,7 @@ class Translation(object):
 
 
 
-  HELP_TEXT = """
+    HELP_TEXT = """
 <b><i><u>How To Use Me!?</u></i></b>
 
 <i>
