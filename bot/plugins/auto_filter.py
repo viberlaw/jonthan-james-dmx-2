@@ -136,7 +136,7 @@ async def auto_filter(bot, update):
         Send_message = await bot.send_message(
             chat_id=update.chat.id,
             text=f"""<b>
-𝙃𝙞, {update.from_user.mention}! 𝙄 𝘾𝙤𝙪𝙡𝙙𝙣'𝙩 𝙁𝙞𝙣𝙙 𝙏𝙝𝙚 𝙈𝙤𝙫𝙞𝙚 𝙔𝙤𝙪'𝙧𝙚 𝙇𝙤𝙤𝙠𝙞𝙣𝙜 𝙁𝙤𝙧 😭😭
+𝙃𝙞, {update.from_user.mention}! 𝙎𝙤𝙧𝙧𝙮 𝙞 𝙙𝙞𝙙𝙣'𝙩 𝙜𝙚𝙩 𝙩𝙝𝙖𝙩 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙝𝙚𝙧𝙚 𝙡𝙤𝙤𝙠𝙞𝙣𝙜 𝙛𝙤𝙧
 ★ iee movie ente database il added alla || bro chodicha moviede spelling correct ano ennu Google nokki check cheyiyukka .
 
 """,
@@ -178,13 +178,13 @@ async def auto_filter(bot, update):
         if len_result != 1:
             result[0].append(
                 [
-                    InlineKeyboardButton("𝙉𝙀𝙓𝙏 >>", callback_data=f"navigate(0|next|{query})")
+                    InlineKeyboardButton("᯾ 𝗡𝗘𝗫𝗧 𝗣𝗔𝗚𝗘 ᯾", callback_data=f"navigate(0|next|{query})")
                 ]
             )
         
         # Just A Decaration
         result[0].append([
-            InlineKeyboardButton(f"🗒 𝙋𝘼𝙂𝙀 1/{len_result if len_result < max_pages else max_pages} 🗒 ", callback_data="ignore")
+            InlineKeyboardButton(f"🗒 𝙿𝙰𝙶𝙴 1/{len_result if len_result < max_pages else max_pages} 🗒 ", callback_data="ignore")
         ])
         
         
