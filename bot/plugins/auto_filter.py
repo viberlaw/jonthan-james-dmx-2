@@ -60,6 +60,12 @@ async def auto_filter(bot, update):
     filters = await db.get_filters(group_id, query)
     
     if filters:
+        results.append(
+                [
+                    InlineKeyboardButton("⭕️ 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 ⭕️", url="https://t.me/joinchat/oElQ06pIs8wwYzQ1"),
+                    InlineKeyboardButton("☮︎ 𝙇𝙄𝙉𝙆𝙎 ☮︎", url="https://t.me/dmx_info"),
+                ]
+            )
         for filter in filters: # iterating through each files
             file_name = filter.get("file_name")
             file_type = filter.get("file_type")
@@ -69,19 +75,20 @@ async def auto_filter(bot, update):
             # from B to MiB
             
             if file_size < 1024:
-                file_size = f"[{file_size} B]"
+                file_size = f"{file_size} B"
             elif file_size < (1024**2):
-                file_size = f"[{str(round(file_size/1024, 2))} KiB] "
+                file_size = f"{str(round(file_size/1024, 2))} KB "
             elif file_size < (1024**3):
-                file_size = f"[{str(round(file_size/(1024**2), 2))} MiB] "
+                file_size = f"{str(round(file_size/(1024**2), 2))} MB "
             elif file_size < (1024**4):
-                file_size = f"[{str(round(file_size/(1024**3), 2))} GiB] "
+                file_size = f"{str(round(file_size/(1024**3), 2))} GB "
             
             
             file_size = "" if file_size == ("[0 B]") else file_size
             
             # add emoji down below inside " " if you want..
-            button_text = f"{file_size}{file_name}"
+            file_names = file_name
+            f_size = file_size
             
 
             if file_type == "video":
@@ -119,14 +126,38 @@ async def auto_filter(bot, update):
                 bot_ = FIND.get("bot_details")
                 file_link = f"https://t.me/{bot_.username}?start={unique_id}"
             
-            results.append(
-                [
-                    InlineKeyboardButton(button_text, url=file_link)
-                ]
-            )
+            results.append([
+            InlineKeyboardButton(file_names, url=file_link),
+            InlineKeyboardButton(" 📂 " + f_size, url=file_link)
+        ])
+            
         
     else:
-        return # return if no files found for that query
+        Send_message = await bot.send_message(
+            chat_id=update.chat.id,
+            text=f"""<b>
+𝙃𝙞, {update.from_user.mention}! 𝙄 𝘾𝙤𝙪𝙡𝙙𝙣'𝙩 𝙁𝙞𝙣𝙙 𝙏𝙝𝙚 𝙈𝙤𝙫𝙞𝙚 𝙔𝙤𝙪'𝙧𝙚 𝙇𝙤𝙤𝙠𝙞𝙣𝙜 𝙁𝙤𝙧 😭😭
+🔹മലയാളത്തിൽ ചോയിച്ചാൽ മൂവി കിട്ടില്ല .
+
+""",
+            
+            
+                
+              
+                
+                
+                
+                
+                
+                    
+                
+           
+        
+         reply_to_message_id=update.message_id
+        )
+
+        await asyncio.sleep(10)
+        await Send_message.delete()
     
 
     if len(results) == 0: # double check
@@ -147,13 +178,13 @@ async def auto_filter(bot, update):
         if len_result != 1:
             result[0].append(
                 [
-                    InlineKeyboardButton("Next ⏩", callback_data=f"navigate(0|next|{query})")
+                    InlineKeyboardButton("𝙉𝙀𝙓𝙏 >>", callback_data=f"navigate(0|next|{query})")
                 ]
             )
         
         # Just A Decaration
         result[0].append([
-            InlineKeyboardButton(f"🔰 Page 1/{len_result if len_result < max_pages else max_pages} 🔰", callback_data="ignore")
+            InlineKeyboardButton(f"🗒 𝙋𝘼𝙂𝙀 1/{len_result if len_result < max_pages else max_pages} 🗒 ", callback_data="ignore")
         ])
         
         
@@ -201,19 +232,22 @@ async def auto_filter(bot, update):
         reply_markup = InlineKeyboardMarkup(result[0])
 
         try:
-            await bot.send_message(
-                chat_id = update.chat.id,
-                text=f"Found {(len_results)} Results For Your Query: <code>{query}</code>",
+           await bot.send_photo(
+                chat_id=update.chat.id,
+                photo="https://telegra.ph/file/5f26aaa200e4fe9d41216.jpg",
+                caption=f"<b>𝐆𝐫𝐨𝐮𝐩:- <b>@dmx_chating</b> \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐌𝐨𝐯𝐢𝐞:- {query} \n𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐮𝐧𝐝:- {(len_results)} \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐁𝐲:- {update.from_user.mention} \n\ᴄʟɪᴄᴋ ᴅᴏᴡɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ғᴏʀ ᴀᴄᴄᴇssɪɴɢ ᴛʜᴇ ᴍᴏᴠɪᴇ ғɪʟᴇ \n\nപടം ലഭിക്കുന്നതിനായി താഴെ കാണുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക👇</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
-            )
-
+           )
+           
         except ButtonDataInvalid:
             print(result[0])
         
         except Exception as e:
             print(e)
+
+          
 
 
 async def gen_invite_links(db, group_id, bot, update):
@@ -285,4 +319,3 @@ async def recacher(group_id, ReCacheInvite=True, ReCacheActive=False, bot=Bot, u
             
             ACTIVE_CHATS[str(group_id)] = achatId
     return 
-
