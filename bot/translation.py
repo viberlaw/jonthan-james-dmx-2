@@ -5,12 +5,12 @@
 class Translation(object):
     
     START_TEXT = """<b>Hey {}!!</b>
-<i>Am Just A Advance Auto Filter Bot....😉
+<b>ഹലോ എന്റെ പേര് JONATHAN JAMES <b><b>ഞാൻ<b>
+<a href="https://t.me/dmx_chating">ᴅᴍx ᴄʜᴀᴛɪɴɢ</a></b> എന്നാ ഗ്രൂപ്പിൽ മൂവീസ് കൊടുക്കുന്ന ബോട്ട് ആണ് എന്നെ DMX ഗ്രൂപ്പിന് അല്ലാതെ വേറെ ആർക്കും ഉപയോഗിക്കാൻ കഴിയുകയില്ല 
 
-Just Add Me To Your Group And Channel And Connect Them And See My Pevers 🔥🔥😝
 
-For More Details Click Help Button Below..
-@CrazyBotsz
+
+
 </i>"""    
     
     HELP_TEXT = """
