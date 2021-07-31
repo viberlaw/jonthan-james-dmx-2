@@ -57,7 +57,11 @@ async def settings(bot, update):
                 ),
             
             
-                
+             InlineKeyboardButton
+                (
+                    "About", callback_data=f"about({chat_id})"
+                )
+        ],   
                   
                 
         
