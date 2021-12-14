@@ -62,8 +62,8 @@ async def auto_filter(bot, update):
     if filters:
         results.append(
                 [
-                    InlineKeyboardButton("⭕️ 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 ⭕️", url="https://t.me/joinchat/oElQ06pIs8wwYzQ1"),
-                    InlineKeyboardButton("☮︎ 𝙇𝙄𝙉𝙆𝙎 ☮︎", url="https://t.me/dmx_info"),
+                    InlineKeyboardButton("⭕️ 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 ⭕️", url="https://t.me/+-VGvPqWAf9w1Mjc1"),
+                    InlineKeyboardButton("☮︎ 𝙇𝙄𝙉𝙆𝙎 ☮︎", url="https://t.me/fchdvd"),
                 ]
             )
         for filter in filters: # iterating through each files
@@ -234,8 +234,8 @@ async def auto_filter(bot, update):
         try:
            await bot.send_photo(
                 chat_id=update.chat.id,
-                photo="https://telegra.ph/file/5f26aaa200e4fe9d41216.jpg",
-                caption=f"<b>𝐆𝐫𝐨𝐮𝐩:- <b>@dmx_chating</b> \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐌𝐨𝐯𝐢𝐞:- {query} \n𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐮𝐧𝐝:- {(len_results)} \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐁𝐲:- {update.from_user.mention} \n ᴄʟɪᴄᴋ ᴅᴏᴡɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ғᴏʀ ᴀᴄᴄᴇssɪɴɢ ᴛʜᴇ ᴍᴏᴠɪᴇ ғɪʟᴇ \n\nപടം ലഭിക്കുന്നതിനായി താഴെ കാണുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക👇</b>",
+                photo="https://telegra.ph/file/2152e795efed2f133e3a9.jpg",
+                caption=f"<b>𝐆𝐫𝐨𝐮𝐩:- <b>@filmcityhd1</b> \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐌𝐨𝐯𝐢𝐞:- {query} \n𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐮𝐧𝐝:- {(len_results)} \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐁𝐲:- {update.from_user.mention} \n ᴄʟɪᴄᴋ ᴅᴏᴡɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ғᴏʀ ᴀᴄᴄᴇssɪɴɢ ᴛʜᴇ ᴍᴏᴠɪᴇ ғɪʟᴇ \n\nപടം ലഭിക്കുന്നതിനായി താഴെ കാണുന്ന ബട്ടണുകളിൽ ക്ലിക്ക് ചെയ്യുക👇</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
